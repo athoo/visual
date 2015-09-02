@@ -1,0 +1,28 @@
+{
+  "name": "visual-chart",
+  "version": "0.0.0",
+  "authors": [
+    "athoo <athoo@sina.com>"
+  ],
+  "description": "This project apply d3.js to web visualization",
+  "main": "js/index.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "visualization"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6"
+  }
+}
