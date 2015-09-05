@@ -1,0 +1,6 @@
+{
+  "name": "Node.js Visualization",
+  "description": "Using Express 4 host Visualization project",
+  "repository": "https://github.com/athoo/visual",
+  "keywords": ["node", "express", "Visualization"],
+}
