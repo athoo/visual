@@ -1,3 +1,4 @@
+var data_endpoint = "https://cvisual-data.herokuapp.com/api/v1/data/"
 // // pie chart, d is a object
 // function draw_pie(data_url){
 //   d3.json(data_url, function(d){
@@ -21,17 +22,10 @@ $(document).ready(function(){
   main();
 });
 
-
-
-
-
 function main(){
   toggle_menu();
   draw_mono_pie();
 }
-
-
-
 
 var toggle_menu = function(){
   $("#menu-toggle").click(function(e) {
@@ -42,19 +36,28 @@ var toggle_menu = function(){
 
 
 var draw_mono_pie = function(){
-  var Obj = {
-    title: "This is a pie chart to visualization",
-    name: "play with browser",
-    data:[
-        {name: "Microsoft Internet Explorer", y: 56.33},
-        {name: "Chrome", y: 24.03},
-        {name: "Firefox", y: 10.38},
-        {name: "Safari", y: 4.77},
-        {name: "Opera", y: 0.91},
-        {name: "Proprietary or Undetectable", y: 0.2}
-    ]
-  };
-  mono_pie_paintbrush(Obj);
+
+  var data_url = data_endpoint + "data";
+
+  $.get(data_url, function(data){
+    var Obj = $.parseJSON(data);
+    mono_pie_paintbrush(Obj);
+  })
+
+  // var Obj = {
+  //   title: "This is a pie chart to visualization",
+  //   name: "play with browser",
+  //   data:[
+  //       {name: "Microsoft Internet Explorer", y: 56.33},
+  //       {name: "Chrome", y: 24.03},
+  //       {name: "Firefox", y: 10.38},
+  //       {name: "Safari", y: 4.77},
+  //       {name: "Opera", y: 0.91},
+  //       {name: "Proprietary or Undetectable", y: 0.2}
+  //   ]
+  // };
+
+  // mono_pie_paintbrush(Obj);
 };
 
 var mono_pie_paintbrush = function (Obj) {
